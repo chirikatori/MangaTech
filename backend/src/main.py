@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.routes import ocr_router, home_router
+from src.routes import ocr_router, home_router, file_router
 
 
 app = FastAPI()
 app.include_router(home_router)
 app.include_router(ocr_router)
+app.include_router(file_router)
 
 origins = [
     "http://localhost:5173",
