@@ -26,9 +26,16 @@ class Magi:
             self.model.visualise_single_image_prediction(image, results[0],
                                                          filename=res_imgpath)
 
-    # Text Recognition (Build later)
-    def text_recognition(self):
-        pass
+    # Text Recognition
+    def text_recognition(self, image_path, res_txtpath):
+        image = self._read_image_as_np_array(image_path)
+        with torch.no_grad():
+            results = self.model.predict_detections_and_associations([image])
+            text_bboxes_for_all_images = [x["texts"] for x in results]
+            ocr_results = self.model.predict_ocr([image],text_bboxes_for_all_images)
+        self.model.generate_transcript_for_single_image(results[0],
+                                                        ocr_results[0],
+                                                        filename=res_txtpath)
 
     def _read_image_as_np_array(self, image_path):
         with open(image_path, "rb") as file:

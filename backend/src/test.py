@@ -4,8 +4,8 @@ from PIL import Image
 import torch
 
 images = [
-        "./manga_test.jpeg",
-        "./test_image.jpeg",
+        "data/manga_test.jpeg",
+        "data/test_image.jpeg",
     ]
 
 
