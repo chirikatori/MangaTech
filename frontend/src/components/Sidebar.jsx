@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const menuItems = [
     { name: "Text Detection", icon: <ScanText className="w-5 h-5" />, path: "/text-detection" },
-    { name: "Text Recognition", icon: <FileText className="w-5 h-5" />, path: "/settings" },
+    { name: "Text Recognition", icon: <FileText className="w-5 h-5" />, path: "/text-recognition" },
     { name: "Transcript translation", icon: <Languages className="w-5 h-5" />, path: "/settings" },
   ];
 
