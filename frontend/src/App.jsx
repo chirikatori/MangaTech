@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Project from './pages/Project'
 import TextDetection from './pages/TextDetection'
+import TextRecognition from './pages/TextRecognition'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<div className='bg-amber-100 min-h-full'><Home /></div>} />
         <Route path="/projects" element={<Project />} />
         <Route path="/text-detection" element={<TextDetection />} />
+        <Route path="/text-recognition" element={<TextRecognition />} />
       </Routes>
     </main>
     <Footer></Footer>
