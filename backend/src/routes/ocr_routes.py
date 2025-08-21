@@ -98,7 +98,7 @@ async def text_recognition(
                                 detail="Result text file not found.")
 
         return JSONResponse(
-            content={"processed_text_url": f"/api/image/{result_filename}"}
+            content={"processed_text_url": f"/api/output/{result_filename}"}
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
